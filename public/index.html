@@ -2,41 +2,71 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- let's import our stylesheet (found in public/css/styles.css)-->
+    <title>Transportation Converter</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
   </head>
 
-  <!-- you can also specify styles straight in html! Let's use Verdana on this page.-->
-  <body style="font-family: Verdana">
-    <header
-      style="background-color: #e5e5e5; padding: 15px; text-align: center"
-    >
-      <h1>Hello World</h1>
-    </header>
-
-    <div class="site-view">
-      <nav>
-        <a href="/a">Normal Rabbit</a>
-        <a href="/b">Gray Rabbit</a>
-        <a href="/c">Sepia Rabbit</a>
-      </nav>
-
-      <main>
-        <h2>Why are these colors so ugly?</h2>
-        <p>
-          Sure makes you feel motivated to pick a better color-scheme for
-          yourself instead of sticking with these ugly default colors, huh? >:)
-        </p>
-      </main>
-
-      <footer>
-        <h2>About</h2>
-        <p>
-          This is some example code prepared for CS160: User Interface Design
-          &amp; Development, Spring 2024. It was built by Nate Weinman, Shm
-          Almeda, and Timothy J. Aveni.
-        </p>
-      </footer>
+<body>
+  <div class="container">
+    <h1>Personal Transportation Conversion App</h1>
+    <div class="input-group">
+      <label for="distance">Enter Distance (km):</label>
+      <input type="number" id="distance" name="distance">
+    </div><br><br>
+    <div class="vehicle-selection">
+      <label>Select Vehicle:</label>
     </div>
-  </body>
-</html>
+    <div class="vehicle-selection2">
+      <div>
+        <input type="radio" id="alto" name="vehicle" value="Maruti Suzuki Alto">
+        <label for="alto">Maruti Suzuki Alto</label>
+      </div>
+      <div>
+        <input type="radio" id="i20" name="vehicle" value="Hyundai i20">
+        <label for="i20">Hyundai i20</label>
+      </div>
+      <div>
+        <input type="radio" id="nexon" name="vehicle" value="Tata Nexon">
+        <label for="nexon">Tata Nexon</label>
+      </div>
+      <div>
+        <input type="radio" id="city" name="vehicle" value="Honda City">
+        <label for="city">Honda City</label>
+      </div>
+      <div>
+        <input type="radio" id="thar" name="vehicle" value="Mahindra Thar">
+        <label for="thar">Mahindra Thar</label>
+      </div>
+      <div>
+        <input type="radio" id="crysta" name="vehicle" value="Toyota Innova Crysta">
+        <label for="crysta">Toyota Innova Crysta</label>
+      </div>
+      <div>
+        <input type="radio" id="seltos" name="vehicle" value="Kia Seltos">
+        <label for="seltos">Kia Seltos</label>
+      </div>
+      <div>
+        <input type="radio" id="kwid" name="vehicle" value="Renault Kwid">
+        <label for="kwid">Renault Kwid</label>
+      </div>
+      <div>
+        <input type="radio" id="ecosport" name="vehicle" value="Ford EcoSport">
+        <label for="ecosport">Ford EcoSport</label>
+      </div>
+      <div>
+        <input type="radio" id="tiago" name="vehicle" value="Tata Tiago">
+        <label for="tiago">Tata Tiago</label>
+      </div>
+    </div>
+    <button id="calculate-btn">Calculate</button>
+    <div id="result">
+      <label>RESULT:</label>
+      <!-- Display results here -->
+    </div>
+    <div id="comparison">
+      <label>COMPARISON:</label>
+      <!-- Display comparison table here -->
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>

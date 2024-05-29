@@ -1,78 +1,107 @@
-* {
-  /* This directive changes every element's padding behavior. */
-  /* Widths will be *inclusive* of padding and borders, which makes them more predictable. */
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #ffffff;
+  --bg-color: #f4f4f9;
+  --text-color: #333;
+  --border-color: #ccc;
+  --font-family: 'Roboto', sans-serif;
 }
 
 body {
-  /* These text styles will cascade through every child of the body, unless they are overridden. */
-  /* If Arial is not found, use the browser's fallback sans-serif font. */
-  font-family: Arial, sans-serif;
-  color: #000000;
-
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
 }
 
-.site-view {
-  /* This lets us arrange the child elements of the main view in a row. */
-  display: flex;
-  flex-direction: row;
-}
-
-nav {
-  /* The `flex` attribute controls the width of the column *relative* to other columns. */
-  /* Since the total `flex` attributes sum to 10, the nav will take up 20% of the horizontal width. */
-  flex: 2;
-
-  background-color: #ed2828;
+.container {
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   text-align: center;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.input-group, .vehicle-selection, #result, #comparison {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.input-group label, .vehicle-selection label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="number"] {
+  width: calc(100% - 22px);
   padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-top: 10px;
 }
 
-/* Style all link tags within nav elements */
-nav a {
-  background-color: #28ed31;
-  padding: 8px;
-  margin-top: 7px;
-  display: block;
-  width: 100%;
-  color: black;
+.vehicle-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-/* Makes sure affected elements don't exceed the bounds of their container. */
-/* Handy for images! */
-.responsive {
-  max-width: 100%;
-  max-height: 100%;
+.vehicle-selection div {
+  flex: 1 1 45%;
+  margin: 10px;
 }
 
-/* This can be handy for centering content, but doesn't work if we don't set */
-/* the width of the element first. */
-/* Flexbox is a lot more, well, flexible! */
-.centered {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.vehicle-selection2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-main {
-  background-color: #dd2118;
-  flex: 6;
-  padding: 0 20px;
+.vehicle-selection2 div {
+  flex: 1 1 45%;
+  margin: 10px;
 }
 
-footer {
-  background-color: #49cad2;
-  flex: 2;
-  padding: 15px;
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@media only screen and (max-width: 720px) {
-  /* For mobile phones. Try resizing your browser window or using developer tools to trigger this responsive layout! */
-  .site-view {
-    /* The main sections are still in a Flexbox layout; this just changes the Flexbox configuration */
-    /* so that adjacent elements will render vertically instead of horizontally. */
-    flex-direction: column;
+button:hover {
+  background-color: #45a049;
+}
+
+#result, #comparison {
+  padding: 20px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .vehicle-selection div {
+    flex: 1 1 100%;
   }
 }
